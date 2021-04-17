@@ -1,7 +1,7 @@
 # notsharex
 Create a file in `~/.config/notsharex/` called `config.sh` with the contents of
 
-```
+```bash
 #Server address
 server=SMB SERVER
 #Name of server

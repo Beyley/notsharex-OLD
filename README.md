@@ -44,3 +44,17 @@ random_string_length=5
 # Message to say when done
 end_message='gawr gura go S M B'
 ```
+
+CREDENTIAL FILES
+FTP
+```
+USER
+PASS
+```
+
+SMB
+```
+USER
+WORKGROUP
+PASS
+```

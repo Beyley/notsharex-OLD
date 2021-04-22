@@ -45,6 +45,25 @@ random_string_length=5
 end_message='gawr gura go S M B'
 ```
 
+CATBOX
+```bash
+# Connection type
+conntype='curl'
+
+# Server address
+server=https://catbox.moe/user/api.php
+# The temporary folder
+tempfolder=/tmp/notsharex
+# The name of the data that stores the hash (ex. for catbox.moe its 'userhash')
+upload_creds_name=userhash
+# The user hash
+user_hash=USERHASH HERE
+# Name of the data that stores the file (ex. for catbox.moe its 'fileToUpload')
+upload_file_name=fileToUpload
+# Message to say when done
+end_message='gawr gura go catbox dot moe' 
+```
+
 CREDENTIAL FILES
 FTP
 ```

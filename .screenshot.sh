@@ -57,7 +57,7 @@ then
     # Remove the temporary image from the temp folder
     rm /tmp/temp.png
     
-    final_link='$link/$random.png'
+    final_link="$link/$random.png"
 elif [ $is_upload == '1' ] 
 then
     final_link=$(curl -F "reqtype=fileupload" -F "$upload_creds_name=$user_hash" -F "$upload_file_name=@/tmp/temp.png" $server)

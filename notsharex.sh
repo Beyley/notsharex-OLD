@@ -1,6 +1,5 @@
 #!/bin/bash
-# A tool to take a screenshot using xfce4-screenshooter, copy it to a samba share which
-# has a webserver hosting that image
+# A tool to take a screenshot using xfce4-screenshooter and upload it somewhere on the internet 
 
 ################################################################
 #                                                              #
@@ -18,8 +17,16 @@ credfile=$config_directory/.creds
 # Source the main config file
 . $config_directory/config.sh
 
+# Make sure that the file is not in there (allows us to check if the screenshot was successful)
+rm /tmp/temp.png
+
 # Grab the screenshot
 xfce4-screenshooter -r -s /tmp/temp.png
+
+if [ ! -f /tmp/temp.png ]
+then
+	exit 0
+fi
 
 # Create the temporary directory
 mkdir $tempfolder

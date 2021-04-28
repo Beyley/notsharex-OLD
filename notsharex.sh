@@ -19,9 +19,24 @@ credfile=$config_directory/.creds
 
 # Make sure that the file is not in there (allows us to check if the screenshot was successful)
 rm /tmp/temp.png
+rm /tmp/static.png
+
+if [ $static_image == true ]
+then
+	# Grab the static image
+	xfce4-screenshooter -f -s /tmp/static.png
+
+	# Display it to the screen
+	feh /tmp/static.png -x -g 5440x1080+-1920+0 &
+fi
 
 # Grab the screenshot
 xfce4-screenshooter -r -s /tmp/temp.png
+
+if [ $static_image == true ] 
+then
+	pkill feh	
+fi
 
 if [ ! -f /tmp/temp.png ]
 then

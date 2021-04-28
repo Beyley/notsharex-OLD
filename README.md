@@ -3,6 +3,9 @@ Create a file in `~/.config/notsharex/` called `config.sh` with the selection of
 
 FTP
 ```bash
+# Enable static image on button press
+static_image=true
+
 # Connection type
 conntype='ftp'
 
@@ -24,6 +27,9 @@ end_message='gawr gura go F T P'
 
 SMB
 ```bash
+# Enable static image on button press
+static_image=true
+
 # Connection type
 conntype='smb'
 
@@ -47,6 +53,9 @@ end_message='gawr gura go S M B'
 
 CATBOX
 ```bash
+# Enable static image on button press
+static_image=true
+
 # Connection type
 conntype='curl'
 

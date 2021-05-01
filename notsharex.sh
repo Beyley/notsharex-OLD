@@ -27,7 +27,17 @@ then
 	xfce4-screenshooter -f -s /tmp/static.png
 
 	# Display it to the screen
-	feh /tmp/static.png -x -g 5440x1080+-1920+0 &
+	feh /tmp/static.png -x -N -g 5440x1080 & export PID=$!
+	
+	echo xdotool search --pid $PID
+
+	sleep 0.1s
+
+	WID=$(xdotool search --pid $PID)
+
+	echo xdotool windowmove $WID 0 0
+
+	xdotool windowmove $WID 0 0
 fi
 
 # Grab the screenshot

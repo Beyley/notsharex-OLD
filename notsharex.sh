@@ -27,15 +27,24 @@ then
 	xfce4-screenshooter -f -s /tmp/static.png
 
 	# Display it to the screen
-	feh /tmp/static.png -x -N -g 5440x1080 & export PID=$!
+	feh /tmp/static.png -x -N -g 5440x1599 & export PID=$!
 	
-	echo xdotool search --pid $PID
+	# echo xdotool search --pid $PID
 
-	sleep 0.1s
+	# sleep 0.25s
 
 	WID=$(xdotool search --pid $PID)
 
-	echo xdotool windowmove $WID 0 0
+	until [ "$WID" != "" ]
+	do
+		WID=$(xdotool search --pid $PID)
+		# echo WID=$WID
+		sleep 0.05s
+	done
+
+	# echo WID IS EQUAL TO $WID
+
+	# echo xdotool windowmove $WID 0 0
 
 	xdotool windowmove $WID 0 0
 fi
@@ -98,4 +107,4 @@ fi
 echo "$final_link" | xclip -i -selection clipboard
 
 # Say a message when the script is complete
-spd-say -i -95 "$end_message"
+espeak "$end_message"
